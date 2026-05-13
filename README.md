@@ -11,18 +11,27 @@ Pass the value for number of iterations and print the numbers.
 End the program.
 
 # PROGRAM:
-~~~
-import random
-def main():
-    n = int(input("Enter how many random numbers to generate: "))
-    print("Generated Random Numbers:")
-    for _ in range(n):
-        print(random.randint(0, 2**31 - 1), end=" ")  # randint to mimic C's rand() range
-if __name__ == "__main__":
-    main()
-~~~
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main() {
+ srand(time(0));
+ int n;
+ printf("Enter the number of random numbers to generate: ");
+ scanf("%d", &n);
+ printf("Generated random numbers:\n");
+ for (int i = 0; i < n; i++) {
+ int random_number = rand();
+ printf("%d\n", random_number);
+ }
+ return 0;
+}
+
+```
 # OUTPUT:
-<img width="1917" height="1015" alt="{612D4E6A-EEED-40C3-8FFB-7FE4C7D3809A}" src="https://github.com/user-attachments/assets/fcc1e9d0-de9e-4616-a7bd-72f5305121f0" />
+<img width="675" height="350" alt="image" src="https://github.com/user-attachments/assets/d1b9749b-e123-4d6c-8a35-740140cdc0d0" />
+
 
 # RESULT:
-the above program is executed in Implementation of Pseudorandom Number Generation Using Standard library
+Implementation of Pseudorandom Number Generation Using Standard library is successful.
